@@ -16,7 +16,7 @@ public class TrainingRouter extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         // Basic route that prints "The North Remembers!" to the console
-        from("timer:training?repeatCount=100&delay=1000")
+        from("timer:training?repeatCount=10&delay=1000")
                 .setBody(constant("The North Remembers!"))
                 .process(exchange -> {
                     String message = exchange.getIn().getBody(String.class);
