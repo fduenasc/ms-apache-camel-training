@@ -29,7 +29,7 @@ public class GameOfThronesRouter extends RouteBuilder {
     private static final String STATUS_ALIVE = "Alive";
 
     @Override
-    public void configure() throws Exception {
+    public void configure() {
         // Route that sends 7 JSON messages to RabbitMQ with Game of Thrones characters
         // The ConnectionFactory bean will be automatically detected by the spring-rabbitmq component
         from("timer:got-characters?repeatCount=1&delay=2000")
